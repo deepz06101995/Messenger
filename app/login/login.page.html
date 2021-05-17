@@ -1,0 +1,44 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center" style="font-style: italic;" color="primary">Messenger</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card style="margin-top: 10px;">
+    <ion-grid>
+      <ion-row>
+        <ion-col offset=3 size=6  class="ion-justify-content-center" style="display: flex;">
+          <ion-img style="width:50%" src="assets/logo.png" ></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content>
+      <ion-item style="margin-top: 20px;">
+        <ion-label position="floating">User Name</ion-label>
+        <ion-input [(ngModel)]="user_name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col offset=3 size=6>
+            <ion-button shape="round" [disabled]="!user_name || !password" (click)="logginUser()" expand="full" size="medium" style="margin-top: 20px;">Log In</ion-button>
+            <ion-text color="primary" class="ion-text-center">
+              <h3 style="padding-top: 10px;">Forgot Password?</h3>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>

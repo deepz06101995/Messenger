@@ -1,0 +1,50 @@
+[
+  {
+    "user_id" : 1,
+    "name":"Finn",
+    "img":"assets/images/avatar-finn.png",
+    "msg":"Listen, I've had a pretty messed up day..."
+  },
+  {
+    "user_id" : 2,
+    "name":"Han",
+    "img":"assets/images/avatar-han.png",
+    "msg":"I've got enough on my plate as it is, and I..."
+  },
+  {
+    "user_id" : 3,
+    "name":"Rey",
+    "img":"assets/images/avatar-rey.png",
+    "msg":"You will remove these restraints and leave..."
+  },
+  {
+    "user_id" : 4,
+    "name":"Luke",
+    "img":"assets/images/avatar-luke.png",
+    "msg":"I feel the good in you, the conflict..."
+  },
+  {
+    "user_id" : 5,
+    "name":"Poe",
+    "img":"assets/images/avatar-poe.png",
+    "msg":"I just upgraded my X-Wing. Next time..."
+  },
+  {
+    "user_id" : 6,
+    "name":"Ben",
+    "img":"assets/images/avatar-ben.png",
+    "msg":"These aren't the droids you're looking for..."
+  },
+  {
+    "user_id" : 7,
+    "name":"Leia",
+    "img":"assets/images/avatar-leia.png",
+    "msg":"I've placed information vital to the survival..."
+  },
+  {
+    "user_id" : 8,
+    "name":"Yoda",
+    "img":"assets/images/avatar-yoda.png",
+    "msg":"Do or do not. There is no try..."
+  }
+]

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  (click)="goBackChat()">
+        <ion-icon name="caret-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary" (click)="converationAction()">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-avatar slot="start" style="width: 40px;  height: 40px;">
+      <img [src]="CurrentUserDetail.img" >
+    </ion-avatar>
+    <ion-title  style="font-style: italic;">{{CurrentUserDetail.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row *ngFor="let chats of chatMessages" style="margin: 7px;">
+    <ion-col class="chat_bubble" [offset]="chats.type == 'from' ? '0' : '6'" size=6 >
+
+      <div [class]="chats.type == 'from' ? 'message_from_class' : 'message_to_class'">
+        <span [style.float]="chats.type == 'from' ? 'left' : 'right' "  >{{chats.msg}}</span>
+      </div>
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding ">
+      <ion-col size=10 class="ion-no-padding">
+        <ion-textarea [(ngModel)]="typed_msg" rows="1" cols="10" placeholder="Type a message" style="padding-bottom: 5px;"></ion-textarea>
+      </ion-col>
+      <ion-col size=2 class="ion-align-items-center custm_hover_send" (click)="sendMessage()">
+        <ion-icon name="send" style="position: absolute;  margin: 20px;"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ </ion-footer>

@@ -1,0 +1,33 @@
+<input type="file" accept="image/*" (change)="handleInputChange($event)" hidden #hiddenfile/>
+<ion-content>
+  <ion-toolbar style="margin-top: 10px; ">
+    <ion-segment style="padding-top: 5px;padding-left: 20px;" scrollable="true" s>
+        <ion-segment-button value="friends" style="max-width: 100px;" *ngFor="let story of stories; let ind = index" (click)="catchYourStories(story.type,ind)">
+          <ion-avatar >
+            <img [src]="story.img" style="width: 80%; height: 80%;">
+            <ion-icon name="person-circle-sharp" style="font-size: 0px;"></ion-icon>
+          </ion-avatar>
+          <ion-label [hidden] = "story.type !== 'default'">Add Stories</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+     <ion-list>
+      <ion-item  >
+        <ion-icon slot="end" name="logo-ionic"></ion-icon>
+        <ion-label>Viewed Status</ion-label>
+      </ion-item>
+    </ion-list>
+
+<ion-list>
+  <ion-item *ngFor="let status of status_arr" (click)="onToStatus()">
+    <ion-avatar slot="end">
+      <img [src]="status.img">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{status.name}}</h2>
+      <p>today at {{status.dates |  date:'shortTime' }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

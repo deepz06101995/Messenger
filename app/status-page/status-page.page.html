@@ -1,0 +1,19 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" scroll-y="false" color="dark">
+  <ion-slides [options]="slideOpts" pager="true" (ionSlidePrevEnd)="catchSlideEnds()">
+
+    <ion-slide *ngFor="let status of status_slides">
+      <div class="slide">
+        <img [src]="status.urls" />
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
