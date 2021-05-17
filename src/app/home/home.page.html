@@ -1,0 +1,62 @@
+<ion-menu side="start" menuId="sidemenu" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-avatar slot="start" style="padding: 5px;">
+        <img style="width: 50px; height:50px" src="assets/images/avatar.svg">
+      </ion-avatar>
+      <ion-title>{{current_user_details.user_name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Activity</ion-item>
+      <ion-item>Settings</ion-item>
+      <ion-item (click)="logOutUser()">Log Out</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  (click)="openSideMenu()">
+        <ion-icon name="grid-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary"  (click)="presentActionSheet()">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="font-style: italic;"  color="primary">Messenger</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]= "current_tab">
+      <ion-segment-button value="chat" (click)="goTochats()">
+        CHATS
+      </ion-segment-button >
+      <ion-segment-button value="status" (click)="goToStatus()">
+        STATUS
+      </ion-segment-button >
+      <!-- <ion-segment-button value="calls" (click)="goToCalls()">
+        CALLS
+      </ion-segment-button> -->
+    </ion-segment>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+
+<ion-content >
+  <ion-router-outlet #child  id="main"></ion-router-outlet>
+</ion-content>
+
+
+
+
+
